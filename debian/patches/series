@@ -1,0 +1,4 @@
+00_fix_as-needed.diff
+01_fix_glew_search.diff
+02_fix_chinese_fonts.diff
+03_workaround_autoconf_weirdness.patch

@@ -1,0 +1,3 @@
+usr/include/*
+usr/lib/*/libGLC.so
+usr/lib/*/pkgconfig/quesoglc.pc

@@ -1,0 +1,19 @@
+#!/usr/bin/make -f
+
+%:
+	dh $@
+
+override_dh_autoreconf:
+	touch NEWS
+	dh_autoreconf
+
+override_dh_auto_configure:
+	rm -rf src/glew.c src/fribidi
+	dh_auto_configure -- --disable-static
+
+override_dh_auto_install:
+	dh_auto_install
+	rm $(CURDIR)/debian/tmp/usr/lib/*/libGLC.la
+
+override_dh_shlibdeps:
+	dh_shlibdeps -V "libglc0 (>= 0.7.1)"
